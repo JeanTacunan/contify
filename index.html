@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contify</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Contify</h1>
+    <h2>Álbumes</h2>
+
+    <!-- Contenedor principal con tres columnas -->
+    <div class="main-container">
+        <!-- Columna izquierda: Biblioteca -->
+        <div class="left-column">
+            <h3>Biblioteca</h3>
+            <ul class="library">
+                <li><a href="#" onclick="showFavorites()">Favoritos</a></li>
+                <li><a href="#">Música Seleccionada</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna central: Álbumes -->
+        <div class="center-column">
+            <ul class="album-list">
+                <li class="album" data-album="album1">
+                    <img src="images/DeBÍ TIRAR MáS FOToS.jpg" alt="DeBÍ TiRAR MáS FOToS" class="album-cover" onclick="toggleSongs('album1')">
+                    <p>DeBÍ TiRAR MáS FOToS</p>
+                    <ul class="song-list" id="album1">
+                        <li onclick="playSong('music/Bad Bunny - NUEVAYoL (Video Lyrics).mp3')">NUEVAYoL</li>
+                        <li onclick="playSong('music/Bad Bunny - VOY A LLeVARTE PA PR (Video Lyrics).mp3')">VOY A LLeVARTE PA PR</li>
+                        <li onclick="playSong('music/BAD BUNNY - BAILE INoLVIDABLE - DeBÍ TiRAR MáS FOToS.mp3')">BAILE INoLVIDABLE</li>
+                        <li onclick="playSong('music/Bad Bunny, RaiNao - PERFuMITO NUEVO (Video Lyrics).mp3')">PERFuMITO NUEVO</li>
+                        <li onclick="playSong('music/Bad Bunny, Chuwi -  WELTiTA (Video Lyrics).mp3')">WELTiTA</li>
+                    </ul>
+                </li>
+                <li class="album" data-album="album2">
+                    <img src="images/Cosa Nuestra.jpg" alt="Cosa Nuestra" class="album-cover" onclick="toggleSongs('album2')">
+                    <p>Cosa Nuestra</p>
+                    <ul class="song-list" id="album2">
+                        <li onclick="playSong('music/Rauw Alejandro & Bad Bunny - Qué Pasaría... (Lyric Video).mp3')">Qué pasaría...</li>
+                        <li onclick="playSong('music/Rauw Alejandro & Romeo Santos - Khé_ (Lyric Video).mp3')">Khé?</li>
+                        <li onclick="playSong('music/Rauw Alejandro - Tú Con Él (Lyric Video).mp3')">Tú Con Él</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="favorites-list" style="display: none;"></ul>
+        </div>
+
+        <!-- Columna derecha: Información del Artista y Álbum -->
+        <div class="right-column">
+            <h3>Información del Artista y Álbum</h3>
+            <p>Detalles sobre el álbum y el artista aquí.</p>
+        </div>
+    </div>
+
+    <div class="player-container">
+        <p id="currentSong">No hay ninguna canción reproduciéndose</p>
+        <audio id="audioPlayer" controls></audio>
+        <div class="controls">
+            <button id="prev">⏮️</button>
+            <button id="playPause">▶️/⏸️</button>
+            <button id="next">⏭️</button>
+            <button id="shuffle">🔀</button>
+            <button id="addToFavorites">⭐</button>
+        </div>
+    </div>
+</body>
+</html>
